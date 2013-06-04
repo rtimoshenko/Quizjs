@@ -1,0 +1,25 @@
+﻿<html>
+    <head>
+		<title>Quiz</title>
+        <meta content="text/html; charset=utf-8" http-equiv="content-type"/>
+        <script type="text/javascript" src="js/underscore.js"></script>
+		<script type="text/javascript" src="js/quiz.js"></script>
+    </head>
+    <body>
+		<div id="q">...</div>
+        <fieldset>
+            <input type="button" id="a1" />
+            <input type="button" id="a2" />
+            <input type="button" id="a3" />
+            <input type="button" id="a4" />
+        </fieldset>
+        <div>
+            <input type="button" id="p" value="previous" />
+            <input type="button" id="n" value="next" />
+        </div>
+
+		<script type="text/javascript">
+		    var q = new QuizController("q", ["a1", "a2", "a3", "a4"]);
+		</script>
+    </body>
+</html>
