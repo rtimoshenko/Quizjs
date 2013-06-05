@@ -1,5 +1,94 @@
 ﻿(function() 
 {
+    // Thoughts on moving forward...
+    // - Ensure lint
+    // - Remove underscore dependency and refactor. Implement custom methods and use lazy.js approach
+    // - Implement as service set, utilize factories and repositories, and dependency injection
+    // - Questions and Answers should be a "Cue object" and should be stored in repositories (i.e., multi-dimenssional arrays)
+    // - Use typed (or strided) arrays for repositories (i.e., nd-array)
+
+
+    /*
+
+    //////////////////////////////////////
+
+    Refactor sample (from TypeScript):
+
+    //////////////////////////////////////
+
+    var Sayings;
+    (function (Sayings) {
+        var Greeter = (function () {
+            function Greeter(message) {
+                this.greeting = message;
+            }
+            Greeter.prototype.greet = function () {
+                return "Hello, " + this.greeting;
+            };
+            return Greeter;
+        })();
+        Sayings.Greeter = Greeter;    
+    })(Sayings || (Sayings = {}));
+
+    var greeter = new Sayings.Greeter("world");
+    var button = document.createElement('button');
+    button.innerText = "Say Hello";
+    button.onclick = function () {
+        alert(greeter.greet());
+    };
+    document.body.appendChild(button);
+
+
+    //////////////////////////////////////
+
+    Inheritance sample (from TypeScript):
+
+    //////////////////////////////////////
+
+    var __extends = this.__extends || function (d, b) {
+        function __() { this.constructor = d; }
+        __.prototype = b.prototype;
+        d.prototype = new __();
+    };
+    var Animal = (function () {
+        function Animal(name) {
+            this.name = name;
+        }
+        Animal.prototype.move = function (meters) {
+            alert(this.name + " moved " + meters + "m.");
+        };
+        return Animal;
+    })();
+    var Snake = (function (_super) {
+        __extends(Snake, _super);
+        function Snake(name) {
+            _super.call(this, name);
+        }
+        Snake.prototype.move = function () {
+            alert("Slithering...");
+            _super.prototype.move.call(this, 5);
+        };
+        return Snake;
+    })(Animal);
+    var Horse = (function (_super) {
+        __extends(Horse, _super);
+        function Horse(name) {
+            _super.call(this, name);
+        }
+        Horse.prototype.move = function () {
+            alert("Galloping...");
+            _super.prototype.move.call(this, 45);
+        };
+        return Horse;
+    })(Animal);
+    var sam = new Snake("Sammy the Python");
+    var tom = new Horse("Tommy the Palomino");
+    sam.move();
+    tom.move(34);
+
+    */
+
+
     var QuizModel = {
 
         Internals : {
@@ -536,7 +625,6 @@
 
     };
 
-    // Assign QuizController to global scope
-    this.QuizController = QuizController;
+    return QuizController;
 	
 }).call(this);
